@@ -6,7 +6,6 @@ from math import sqrt
 from generic_search import dfs, bfs, node_to_path, astar, Node
 
 
-
 class Cell(str, Enum):
     EMPTY = " "
     BLOCKED = "X"
@@ -133,7 +132,9 @@ if __name__ == "__main__":
         m.clear(path2)
 
     distance: Callable[[MazeLocation], float] = manhattan_distance(m.goal)
-    solution3: Optional[Node[MazeLocation]] = astar(m.start, m.goal_test, m.successors, distance)
+    solution3: Optional[Node[MazeLocation]] = astar(
+        m.start, m.goal_test, m.successors, distance
+    )
     if solution3 is None:
         print("No solution found using A*")
     else:
