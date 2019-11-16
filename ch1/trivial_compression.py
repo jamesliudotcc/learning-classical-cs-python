@@ -48,4 +48,3 @@ if __name__ == "__main__":
     print(
         f"original and decompressed are the same: {original == compressed.decompress()}"
     )
-
